@@ -1,7 +1,7 @@
 /* Shared
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button {
-  border-radius: 100px;
+  border-radius: 10px;
 }
 
 /* Sections
@@ -32,8 +32,8 @@
 /* Values
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .values {
-  background-image: url('../images/values-bg.jpg');
-  background-size: cover;
+  background-image: url('../images/mandalorian_head.png');
+  background-size: cover ;
   color: #fff;
   padding-bottom: 5rem;
 }
@@ -58,7 +58,7 @@
 /* Categories
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories {
-  background-image: url('../images/values-bg.jpg');
+  background-image: url('../images/mandalorian_footer.png');
   background-size: cover;
   color: #fff;
 }
