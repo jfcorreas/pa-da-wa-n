@@ -13,9 +13,25 @@ sys.path.insert(0, folder)
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello():
-    return "Hello World!"
+def init_logging():
+    logbook.StreamHandler(sys.stdout, level=LogLevel.info).push_application()
+    return logbook.Logger('App')
+
+
+def register_blueprints(log: logbook.Logger):
+    from padawan.views import home_views
+
+    app.register_blueprint(home_views.blueprint)
+
+    log.notice("Configuring: Blueprints registered")
+
+
+def configure_app():
+    log = init_logging()
+    log.notice("Configuring PA·DA·WA·N Flask App: ")
+    register_blueprints(log)
+
+    return log
 
 
 def run_app():
@@ -25,17 +41,6 @@ def run_app():
     log.notice(f"Starting PA·DA·WA·N app in localhost:{port} (Debug: {debug})")
     app.run(debug=debug, port=port)
 
-
-def init_logging():
-    logbook.StreamHandler(sys.stdout, level=LogLevel.info).push_application()
-    return logbook.Logger('App')
-
-
-def configure_app():
-    log = init_logging()
-    log.notice("Configuring PA·DA·WA·N Flask App: ")
-
-    return log
 
 if __name__ == '__main__':
     run_app()
