@@ -29,22 +29,22 @@
   display: none;
 }
 
-/* Values
+/* Top-menu
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.values {
+.top-menu {
   background-image: url('../images/mandalorian_head.png');
   background-size: cover ;
   color: #fff;
   padding-bottom: 5rem;
 }
-.value-multiplier {
+.top-menu-multiplier {
   margin-bottom: .5rem;
   color: #11DFC7;
 }
-.value-heading {
+.top-menu-heading {
   margin-bottom: .3rem;
 }
-.value-description {
+.top-menu-description {
   opacity: .8;
   font-weight: 300;
 }
@@ -69,7 +69,7 @@
 /* Bigger than 550 */
 @media (min-width: 550px) {
   .section {
-    padding: 12rem 0 11rem;
+    padding: 2rem 0 1rem;
   }
   .hero {
     padding-bottom: 12rem;
@@ -105,7 +105,7 @@
     font-size: 2.6rem;
   }
   .section {
-    padding: 14rem 0 15rem;
+    padding: 2rem 0 1rem;
   }
   .hero {
     padding: 16rem 0 14rem;
@@ -132,7 +132,7 @@
 /* Bigger than 1000 */
 @media (min-width: 1000px) {
   .section {
-    padding: 20rem 0 19rem;
+    padding: 2rem 0 1rem;
   }
   .hero {
     padding: 22rem 0;
