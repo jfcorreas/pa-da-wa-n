@@ -48,6 +48,28 @@
   opacity: .8;
   font-weight: 300;
 }
+nav li a {
+    text-decoration:none;
+    color:inherit;
+    font-size:14px;
+}
+nav li a:hover {
+    text-decoration:none;
+    color:inherit;
+    font-size:14px;
+}
+nav li{
+    display:inline-block;
+    width:10%;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding:5px 10px;
+    text-align:center;
+}
+nav li:hover {
+    background-color:#fff;
+    color: #393033;
+}
 
 /* Help
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
