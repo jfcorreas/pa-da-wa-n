@@ -1,11 +1,13 @@
 from flask import Blueprint, render_template
 
+from padawan.infraestructure.view_modifiers import response
 from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
 
 blueprint = Blueprint('home', __name__, template_folder='templates')
 
 
 @blueprint.route('/')
+@response(template_file='home/index.html')
 def home():
     vm = ViewModelBase()
-    return render_template('home/index.html', **vm.to_dict())
+    return vm.to_dict()
