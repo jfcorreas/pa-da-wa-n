@@ -38,8 +38,12 @@
   padding-bottom: 5rem;
 }
 .top-menu-multiplier {
-  margin-bottom: .5rem;
   color: #11DFC7;
+  margin-top: 1.5rem;
+}
+.top-menu-multiplier a{
+    text-decoration:none;
+    color:inherit;
 }
 .top-menu-heading {
   margin-bottom: .3rem;
@@ -47,6 +51,9 @@
 .top-menu-description {
   opacity: .8;
   font-weight: 300;
+}
+nav {
+    margin-top: 2.5rem;
 }
 nav li a {
     text-decoration:none;
@@ -60,7 +67,7 @@ nav li a:hover {
 }
 nav li{
     display:inline-block;
-    width:10%;
+    width:20%;
     border: 1px solid white;
     border-radius: 10px;
     padding:5px 10px;
@@ -115,6 +122,9 @@ nav li:hover {
   }
   .hero-heading {
     font-size: 2.4rem;
+  }
+  .top-menu {
+    text-align: right;
   }
 }
 
