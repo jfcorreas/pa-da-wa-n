@@ -1,47 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PA·DA·WA·N Home</title>
+{% extends "shared/_layout.html" %}
 
-    <meta name="description" content="PA·DA·WA·N WebApp">
-    <meta name="author" content="@jfcorreas">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/static/css/skeleton/normalize.css">
-    <link rel="stylesheet" href="/static/css/skeleton/skeleton.css">
-    <link rel="stylesheet" href="/static/css/padawan.css">
-
-    <link rel="icon" type="image/png" href="/static/images/favicon.ico">
-
-</head>
-<body>
-
-  <div class="section top-menu">
-    <div class="container">
-      <div class="row">
-        <div class="one-third column">
-          <h2 class="top-menu-multiplier">PA·DA·WA·N</h2>
-        </div>
-        <div class="two-thirds column">
-          <nav>
-            <ul>
-              <li><a href="#">MENU2</a></li>
-              <li><a href="#">MENU3</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-
+{% block main_content %}
   <div class="section hero">
     <div class="container">
       <div class="row">
         <div class="one-half column">
           <h4 class="hero-heading">Stop coding non-responsive sites. Let users view sites from anywhere.</h4>
-          <a class="button button-primary" href="http://getskeleton.com">Try Skeleton</a>
+          <a class="button button-primary" href="http://getskeleton.com">{{ grogu }}</a>
         </div>
         <div class="one-half column phones">
           <img class="phone" src="/static/images/grogu.png">
@@ -87,5 +52,4 @@
       </div>
     </div>
   </div>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}PA·DA·WA·N{% endblock %}</title>
+
+    <meta name="description" content="PA·DA·WA·N WebApp">
+    <meta name="author" content="@jfcorreas">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/css/skeleton/normalize.css">
+    <link rel="stylesheet" href="/static/css/skeleton/skeleton.css">
+    <link rel="stylesheet" href="/static/css/padawan.css">
+
+    <link rel="icon" type="image/png" href="/static/images/favicon.ico">
+
+    {% block additional_css %}{% endblock %}
+</head>
+<body>
+
+  <div class="section top-menu">
+    <div class="container">
+      <div class="row">
+        <div class="one-third column">
+          <h2 class="top-menu-multiplier">PA·DA·WA·N</h2>
+        </div>
+        <div class="two-thirds column">
+          <nav>
+            <ul>
+              <li><a href="#">MENU2</a></li>
+              <li><a href="#">MENU3</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    {% block main_content %}{% endblock %}
+  </div>
+
+<footer>
+    <div class="copyright">
+        This is a fake site built by me.<br>
+    </div>
+</footer>
+
+{% block additional_js %}{% endblock %}
+
+</body>
+</html>
