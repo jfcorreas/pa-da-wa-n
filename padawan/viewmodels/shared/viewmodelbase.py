@@ -1,9 +1,16 @@
+from typing import Optional
+
 import flask
+
+from padawan.infraestructure import request_dict
 
 
 class ViewModelBase:
     def __init__(self):
         self.request: flask.Request = flask.request
+        self.request_dict = request_dict.create('')
+
+        self.error: Optional[str] = None
         self.grogu = "Baby Yoda"
         # TODO manage authenticated user
         # self.__user: Optional[User] = None

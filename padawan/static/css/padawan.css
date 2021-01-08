@@ -84,9 +84,18 @@ nav li:hover {
   border-bottom: 1px solid #ddd;
 }
 
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.account-form {
+  max-width: 400px;
+  margin: auto;
+}
+
 /* Error
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
+.error-msg {
+  color: darkred;
+}
 
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint
 
 from padawan.infraestructure.view_modifiers import response
 from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
