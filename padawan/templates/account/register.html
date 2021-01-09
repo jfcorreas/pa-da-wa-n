@@ -2,11 +2,11 @@
 {% block title %}Register New Padawan{% endblock %}
 
 {% block main_content %}
+    <div class="section section-heading">
+        <h1>Register new Padawan</h1>
+    </div>
     <div class="section account-form">
         <form action="" method="POST">
-
-            <h1>Register new Padawan</h1>
-
             <input name="name" type="text" placeholder=" Your name" class="u-full-width" value="{{ name }}"
                    required>
             <input name="email" type="email" placeholder=" Your email address" class="u-full-width"
@@ -17,7 +17,7 @@
                    value="{{ password_bis }}" required>
             <input name="age" type="number" min="18" max="120" class="u-full-width" placeholder=" Your age in years"
                     required>
-            <button type="submit" class="button-primary">Register</button>
+            <button type="submit" class="button button-primary">Register</button>
             <div style="clear: both;"></div>
 
             {% if error %}

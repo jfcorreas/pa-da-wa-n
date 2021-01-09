@@ -31,16 +31,20 @@
   margin-bottom: 1.2rem;
   opacity: .8;
   font-weight: 300;
+  color: #4f4346;
 }
 .section-multiplier {
-  color: #5d4d50;
+  color: #4f4346;
   margin-top: 1.5rem;
 }
 .section-multiplier a{
     text-decoration:none;
     color:inherit;
 }
-
+.section.account-form {
+  max-width: 400px;
+  margin: auto;
+}
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .grogus {
@@ -109,13 +113,6 @@ nav li:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .get-help {
   border-bottom: 1px solid #ddd;
-}
-
-/* Forms
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.account-form {
-  max-width: 400px;
-  margin: auto;
 }
 
 /* Error
