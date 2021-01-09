@@ -15,9 +15,12 @@
   background-color: #67766a;
   border-color: #67766a;
 }
-
-.main-content {
+.all-but-footer {
+  min-height: calc(100vh - 78px);
   background: bisque;
+}
+.main-content {
+
 }
 
 /* Sections
@@ -127,6 +130,7 @@ footer {
   background-image: url('../images/mandalorian_footer.png');
   background-size: cover;
   color: #fff;
+  min-height: 70px;
 }
 
 /* Bigger than 550 */

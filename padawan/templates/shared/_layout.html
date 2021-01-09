@@ -20,41 +20,38 @@
     {% block additional_css %}{% endblock %}
 </head>
 <body>
-
-  <div class="section top-menu">
-    <div class="container">
-      <div class="row">
-        <div class="one-third column">
-          <h2 class="top-menu-multiplier">
-            <a href="/">PA·DA·WA·N</a>
-          </h2>
+    <div class="all-but-footer">
+        <header class="section top-menu">
+        <div class="container">
+            <div class="one-third column">
+              <h2 class="top-menu-multiplier">
+                <a href="/">PA·DA·WA·N</a>
+              </h2>
+            </div>
+            <div class="two-thirds column">
+              <nav>
+                <ul>
+                  <li><a href="/account/register">Register</a></li>
+                  <li><a href="/about">About</a></li>
+                </ul>
+              </nav>
+            </div>
         </div>
-        <div class="two-thirds column">
-          <nav>
-            <ul>
-              <li><a href="/account/register">Register</a></li>
-              <li><a href="/about">About</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
+        </header>
 
-  <div class="main-content">
-      <div class="container">
+        <div class="container">
         {% block main_content %}{% endblock %}
-      </div>
-  </div>
+        </div>
+    </div>
 
-<footer>
-    <div class="section">
-        Aquí van los enlaces al pie
-    </div>
-    <div class="copyright">
-        This is a fake site built by me.<br>
-    </div>
-</footer>
+    <footer>
+        <div class="section">
+            Aquí van los enlaces al pie
+        </div>
+        <div class="copyright">
+            This is a fake site built by me.<br>
+        </div>
+    </footer>
 
 {% block additional_js %}{% endblock %}
 
