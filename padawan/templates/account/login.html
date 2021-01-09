@@ -1,0 +1,22 @@
+{% extends "shared/_layout.html" %}
+{% block title %}May The Force be with you{% endblock %}
+
+{% block main_content %}
+    <div class="section section-heading">
+        <h1>Login to PA·DA·WA·N</h1>
+    </div>
+    <div class="section account-form">
+        <form action="" method="POST">
+            <input name="email" type="email" placeholder=" Your email address" class="u-full-width"
+                   value="{{ email }}" required>
+            <input name="password" type="password" placeholder=" Password" class="u-full-width"
+                   value="{{ password }}" required>
+            <button type="submit" class="button button-primary">Login</button>
+
+            {% if error %}
+                <div class="error-msg">{{ error }}</div>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}
+
