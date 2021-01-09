@@ -1,3 +1,4 @@
+from padawan.services import user_service
 from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
 
 
@@ -21,7 +22,5 @@ class RegisterViewModel(ViewModelBase):
             self.error = 'The password must be at least 5 characters.'
         elif not self.password == self.password_bis:
             self.error = 'Passwords do not match.'
-
-        # TODO Check if user exists before register
-        # elif user_service.find_user_by_email(self.email):
-        #    self.error = 'A user with that email address already exists.'
+        elif user_service.find_user_by_email(self.email):
+            self.error = 'A user with that email address already exists.'

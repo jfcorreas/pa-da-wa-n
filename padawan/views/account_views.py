@@ -1,6 +1,7 @@
 from flask import Blueprint, redirect
 
 from padawan.infraestructure.view_modifiers import response
+from padawan.services import user_service
 from padawan.viewmodels.account.index_viewmodel import IndexViewModel
 from padawan.viewmodels.account.register_viewmodel import RegisterViewModel
 
@@ -12,9 +13,8 @@ blueprint = Blueprint('account', __name__, template_folder='templates')
 def index():
     vm = IndexViewModel()
 
-    # TODO redirect if no user
-    # if not vm.user:
-    #    return redirect('/account/login')
+    if not vm.user:
+        return redirect('/account/login')
 
     return vm.to_dict()
 
@@ -35,11 +35,10 @@ def register_post():
     if vm.error:
         return vm.to_dict()
 
-    # TODO create user en BD
-    # user = user_service.create_user(vm.name, vm.email, vm.password)
-    # if not user:
-    #     vm.error = 'The account could not be created'
-    #     return vm.to_dict()
+    user = user_service.create_user(vm.name, vm.email, vm.password)
+    if not user:
+        vm.error = 'The account could not be created'
+        return vm.to_dict()
 
     resp = redirect('/account')
 
