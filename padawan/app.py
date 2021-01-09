@@ -5,6 +5,7 @@ from flask import Flask
 
 import logbook
 
+from padawan.data import db_session
 from padawan.infraestructure.log_levels import LogLevel
 
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -30,10 +31,22 @@ def register_blueprints(log: logbook.Logger):
     log.notice("Configuring: Blueprints registered")
 
 
+def setup_db(log: logbook.Logger):
+    db_file = os.path.join(
+        os.path.dirname(__file__),
+        'db',
+        'padawan.sqlite'
+    )
+
+    db_session.global_init(db_file)
+    log.notice("Database Initialized")
+
+
 def configure_app():
     log = init_logging()
     log.notice("Configuring PA·DA·WA·N Flask App: ")
     register_blueprints(log)
+    setup_db(log)
 
     return log
 
