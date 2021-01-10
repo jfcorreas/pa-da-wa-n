@@ -31,7 +31,11 @@
             <div class="two-thirds column">
               <nav>
                 <ul>
-                  <li><a href="/account/login">Login</a></li>
+                {% if user_id %}
+                    <li><a href="/account">Account</a></li>
+                {% else %}
+                    <li><a href="/account/login">Login</a></li>
+                {% endif %}
                   <li><a href="/about">About</a></li>
                 </ul>
               </nav>

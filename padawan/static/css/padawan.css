@@ -2,6 +2,8 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button {
   border-radius: 10px;
+  color: #4f4346;
+  border-color: #4f4346;
 }
 .button.button-primary {
   background-color: #4b6054;

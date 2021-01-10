@@ -75,3 +75,11 @@ def login_post():
     cookie_auth.set_auth(resp, user.id)
 
     return resp
+
+
+@blueprint.route('/account/logout')
+def logout():
+    resp = redirect('/')
+    cookie_auth.logout(resp)
+
+    return resp
