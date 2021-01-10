@@ -18,7 +18,7 @@
   border-color: #67766a;
 }
 .all-but-footer {
-  min-height: calc(100vh - 78px);
+  min-height: calc(100vh - 70px);
   background: bisque;
 }
 .main-content {
@@ -168,6 +168,9 @@ footer {
 
   .top-menu-multiplier a {
     font-size: 2.2rem;
+  }
+  .all-but-footer {
+    min-height: calc(100vh - 98px);
   }
 }
 
