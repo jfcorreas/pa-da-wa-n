@@ -4,20 +4,21 @@
 {% block main_content %}
     <div class="section section-heading">
         <h1>Login to PA·DA·WA·N</h1>
-    </div>
-    <div class="section account-form">
-        <form action="" method="POST">
-            <input name="email" type="email" placeholder=" Your email address" class="u-full-width"
-                   value="{{ email }}" required>
-            <input name="password" type="password" placeholder=" Password" class="u-full-width"
-                   value="{{ password }}" required>
-            <button type="submit" class="button button-primary">Login</button>
-            <a href="/account/register" class="button">New User</a>
 
-            {% if error %}
-                <div class="error-msg">{{ error }}</div>
-            {% endif %}
-        </form>
+        <div class="account-form">
+            <form action="" method="POST">
+                <input name="email" type="email" placeholder=" Your email address" class="u-full-width"
+                       value="{{ email }}" required>
+                <input name="password" type="password" placeholder=" Password" class="u-full-width"
+                       value="{{ password }}" required>
+                <button type="submit" class="button button-primary">Login</button>
+                <a href="/account/register" class="button">New User</a>
+
+                {% if error %}
+                    <div class="error-msg">{{ error }}</div>
+                {% endif %}
+            </form>
+        </div>
     </div>
 {% endblock %}
 
