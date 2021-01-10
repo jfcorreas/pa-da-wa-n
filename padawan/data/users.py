@@ -14,4 +14,4 @@ class User(SqlAlchemyBase):
     created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now, index=True)
     # TODO profile_image_url = sqlalchemy.Column(sqlalchemy.String)
     last_login = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now, index=True)
-    # TODO is_admin = sqlalchemy.Column(sqlalchemy.Boolean, default=False)
+    is_admin = sqlalchemy.Column(sqlalchemy.Boolean, default=False)
