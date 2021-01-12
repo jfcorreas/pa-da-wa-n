@@ -1,0 +1,17 @@
+{% extends "shared/_layout.html" %}
+
+{% block main_content %}
+
+<div class="section section-heading">
+    <h2>Redirects administration</h2>
+    <ul>
+        {% for r in redirects %}
+            <li>
+                <span>{{ r.name }} - </span>
+                <a href="/{{ r.short_url }}">/{{ r.short_url }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/admin/edit_redirect" class="button">New Redirect</a>
+</div>
+{% endblock %}

@@ -8,21 +8,21 @@
 
         <div class="section generic-form">
             <form action="" method="POST">
-                <input class="u-max-full-width" type="text"
+                <input class="u-full-width" type="text"
                        id= "name" name="name"
                        title="Name of the Redirect"
                        placeholder="Name of the Redirect"
                        value="{{ name }}" required>
-                <input class="u-max-full-width" type="text"
+                <input class="u-full-width" type="text"
                        id= "short_url" name="short_url"
                        title="Short URL"
                        placeholder="Short URL for the Redirect"
                        value="{{ short_url }}" required>
-                <input class="u-max-full-width" type="text"
-                       id= "dest_url" name="dest_url"
+                <input class="u-full-width" type="text"
+                       id= "url" name="url"
                        title="URL for the Redirect"
                        placeholder="Destination URL for the Redirect"
-                       value="{{ dest_url }}" required>
+                       value="{{ url }}" required>
                 <button type="submit" class="button button-primary">
                     {{ "Edit" if redirect_id else "Add"}}
                 </button>

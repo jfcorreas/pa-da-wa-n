@@ -22,10 +22,12 @@ def init_logging():
 def register_blueprints(log: logbook.Logger):
     from padawan.views import home_views
     from padawan.views import account_views
+    from padawan.views import admin_views
     from padawan.views import error_views
 
     app.register_blueprint(home_views.blueprint)
     app.register_blueprint(account_views.blueprint)
+    app.register_blueprint(admin_views.blueprint)
     app.register_blueprint(error_views.blueprint)
 
     log.notice("Configuring: Blueprints registered")
