@@ -8,7 +8,7 @@
         {% for r in redirects %}
             <li>
                 <span>{{ r.name }} - </span>
-                <a href="/{{ r.short_url }}">/{{ r.short_url }}</a>
+                <a href="/{{ r.short_url }}" target="_blank">/{{ r.short_url }}</a>
             </li>
         {% endfor %}
     </ul>
