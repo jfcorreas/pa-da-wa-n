@@ -5,16 +5,33 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/padawan/static" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/data" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/infraestructure" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/static" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/templates/account" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/templates/admin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/templates/errors" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/templates/home" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/templates/shared" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/viewmodels" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/padawan/views" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (pa-da-wa-n)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/padawan/templates" />
+        <option value="$MODULE_DIR$/padawan/templates/account" />
+        <option value="$MODULE_DIR$/padawan/templates/admin" />
+        <option value="$MODULE_DIR$/padawan/templates/errors" />
+        <option value="$MODULE_DIR$/padawan/templates/home" />
+        <option value="$MODULE_DIR$/padawan/templates/shared" />
       </list>
     </option>
   </component>

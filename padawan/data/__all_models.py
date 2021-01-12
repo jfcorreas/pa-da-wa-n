@@ -5,3 +5,5 @@
 
 # noinspection PyUnresolvedReferences
 import padawan.data.users
+# noinspection PyUnresolvedReferences
+import padawan.data.redirects

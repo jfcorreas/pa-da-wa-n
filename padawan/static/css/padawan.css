@@ -49,7 +49,7 @@
   text-decoration:none;
   color:inherit;
 }
-.section.account-form {
+.section.generic-form {
   max-width: 400px;
   margin: auto;
 }
