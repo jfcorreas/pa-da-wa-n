@@ -7,3 +7,5 @@
 import padawan.data.users
 # noinspection PyUnresolvedReferences
 import padawan.data.redirects
+# noinspection PyUnresolvedReferences
+import padawan.data.publications
