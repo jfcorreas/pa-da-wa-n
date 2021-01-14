@@ -1,0 +1,20 @@
+{% extends "shared/_layout.html" %}
+{% block title %}{{ publication.title }}{% endblock %}
+
+{% block main_content %}
+
+<div class="section section-heading">
+    <h2>{{ publication.title }}</h2>
+    <span>Created: {{ publication.created_date }} by {{ publication.creating_user }}</span>
+    <span>Updated: {{ publication.updated_date }} by {{ publication.updating_user }}</span>
+    {% if publication.num_reads > 1 %}
+        <span>{{ publication.num_reads }} reads</span>
+    {% endif %}
+    <div>
+        {{ html | safe }}
+    </div>
+    {% if user and user.is_admin %}
+        <a href="/admin/edit_publication" class="button">Edit this Publication</a>
+    {% endif %}
+</div>
+{% endblock %}

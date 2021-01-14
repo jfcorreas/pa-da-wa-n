@@ -2,6 +2,7 @@ from typing import Optional, List
 
 from padawan.data import db_session
 from padawan.data.redirects import Redirect
+from padawan.data.publications import Publication
 
 
 def get_redirect_count() -> int:
@@ -59,5 +60,13 @@ def all_redirects() -> List[Redirect]:
 
     try:
         return session.query(Redirect).order_by(Redirect.created_date.desc()).all()
+    finally:
+        session.close()
+
+
+def find_publication_by_id(publication_id: int) -> Optional[Publication]:
+    session = db_session.create_session()
+    try:
+        return session.query(Publication).filter(Publication.id == publication_id).first()
     finally:
         session.close()

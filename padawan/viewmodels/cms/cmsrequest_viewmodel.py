@@ -19,3 +19,12 @@ class CmsRequestViewModel(ViewModelBase):
                 query = query.decode('utf-8')
                 dest = f'{dest}?{query}'
             self.redirect_url = dest
+
+
+class PublicationViewModel(ViewModelBase):
+    def __init__(self, publication_id):
+        super().__init__()
+
+        self.publication_id = publication_id
+        self.publication = cms_service.find_publication_by_id(self.publication_id)
+        self.html = "<h1>TODO</h1>"
