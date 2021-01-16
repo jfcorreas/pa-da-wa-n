@@ -1,11 +1,12 @@
 import logbook
 from flask import Blueprint, redirect
 
-import cms_service
-from admin.editredirect_viewmodel import EditRedirectViewModel
-from admin.publicationtlist_viewmodel import PublicationListViewModel
-from admin.redirectlist_viewmodel import RedirectListViewModel
+from padawan.services import cms_service
+from padawan.infraestructure import permissions
 from padawan.infraestructure.view_modifiers import response
+from padawan.viewmodels.admin.editredirect_viewmodel import EditRedirectViewModel
+from padawan.viewmodels.admin.publicationtlist_viewmodel import PublicationListViewModel
+from padawan.viewmodels.admin.redirectlist_viewmodel import RedirectListViewModel
 
 blueprint = Blueprint('admin', __name__, template_folder='templates')
 log = logbook.Logger('cms_admin')
@@ -13,7 +14,7 @@ log = logbook.Logger('cms_admin')
 
 @blueprint.route('/admin/redirects')
 @response(template_file='admin/redirects.html')
-# TODO limit access to admin: @permissions.admin
+@permissions.admin
 def redirects():
     vm = RedirectListViewModel()
     log.info(f"User viewing redirects: {vm.user.email}")
@@ -22,7 +23,7 @@ def redirects():
 
 @blueprint.route('/admin/edit_redirect', methods=['GET'])
 @response(template_file='admin/edit_redirect.html')
-# TODO limit access to admin: @permissions.admin
+@permissions.admin
 def edit_redirect_get():
     vm = EditRedirectViewModel()
     return vm.to_dict()
@@ -30,7 +31,7 @@ def edit_redirect_get():
 
 @blueprint.route('/admin/edit_redirect', methods=['POST'])
 @response(template_file='admin/edit_redirect.html')
-# TODO limit access to admin: @permissions.admin
+@permissions.admin
 def edit_redirect_post():
     vm = EditRedirectViewModel()
     vm.process_form()
@@ -45,9 +46,9 @@ def edit_redirect_post():
     return redirect('/admin/redirects')
 
 
-@blueprint.route('/publications')
+@blueprint.route('/admin/publications')
 @response(template_file='admin/publications.html')
-# TODO limit access to admin: @permissions.admin
+@permissions.admin
 def publications():
     vm = PublicationListViewModel()
     log.info(f"User viewing publications: {vm.user.email}")
