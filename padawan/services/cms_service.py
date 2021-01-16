@@ -70,3 +70,12 @@ def find_publication_by_id(publication_id: int) -> Optional[Publication]:
         return session.query(Publication).filter(Publication.id == publication_id).first()
     finally:
         session.close()
+
+
+def all_publications() -> List[Publication]:
+    session = db_session.create_session()
+
+    try:
+        return session.query(Publication).order_by(Publication.created_date.desc()).all()
+    finally:
+        session.close()

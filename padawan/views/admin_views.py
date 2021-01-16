@@ -3,6 +3,7 @@ from flask import Blueprint, redirect
 
 import cms_service
 from admin.editredirect_viewmodel import EditRedirectViewModel
+from admin.publicationtlist_viewmodel import PublicationListViewModel
 from admin.redirectlist_viewmodel import RedirectListViewModel
 from padawan.infraestructure.view_modifiers import response
 
@@ -42,3 +43,12 @@ def edit_redirect_post():
     log.notice(f"User adding new redirect: {vm.user.email}. Redirect: {vm.name} -> {vm.short_url}")
 
     return redirect('/admin/redirects')
+
+
+@blueprint.route('/publications')
+@response(template_file='admin/publications.html')
+# TODO limit access to admin: @permissions.admin
+def publications():
+    vm = PublicationListViewModel()
+    log.info(f"User viewing publications: {vm.user.email}")
+    return vm.to_dict()

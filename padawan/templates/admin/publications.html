@@ -1,0 +1,35 @@
+{% extends "shared/_layout.html" %}
+
+{% block main_content %}
+
+<div class="section section-heading">
+    <h2>Publications administration</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Publication ID</th>
+                <th>Short URL</th>
+                <th>Created</th>
+                <th>Last Update</th>
+            </tr>
+    </thead>
+        {% for p in publications %}
+            <tr>
+                <td>{{ p.title }}</td>
+                <td>
+                    <a href="/publications/{{ p.id }}" target="_self">{{ p.id }}</a>
+                </td>
+                <td>
+                    {% if p.short_url %}
+                        <a href="/{{ p.short_url }}" target="_self">/{{ p.short_url }}</a>
+                    {% endif %}
+                </td>
+                <td>{{ p.created_date }}</td>
+                <td>{{ p.updated_date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/admin/edit_publication" class="button">New Publication</a>
+</div>
+{% endblock %}
