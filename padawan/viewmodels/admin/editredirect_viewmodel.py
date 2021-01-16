@@ -13,12 +13,12 @@ class EditRedirectViewModel(ViewModelBase):
         self.redirect_id = redirect_id
 
         if self.redirect_id:
-            self.redirect_id = cms_service.find_redirect_by_id(self.redirect_id)
+            self.redirect = cms_service.find_redirect_by_id(self.redirect_id)
 
         if self.redirect:
             self.name = self.redirect.name
-            self.url = self.url.name
-            self.short_url = self.url.name
+            self.url = self.redirect.url
+            self.short_url = self.redirect.short_url
 
         self.error = None
 

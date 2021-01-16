@@ -14,7 +14,7 @@
         {{ html | safe }}
     </div>
     {% if user and user.is_admin %}
-        <a href="/admin/edit_publication" class="button">Edit this Publication</a>
+        <a href="/admin/edit_publication/{{ publication.id }}" class="button">Edit this Publication</a>
     {% endif %}
 </div>
 {% endblock %}

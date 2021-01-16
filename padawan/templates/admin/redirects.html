@@ -9,9 +9,10 @@
             <li>
                 <span>{{ r.name }} - </span>
                 <a href="/{{ r.short_url }}" target="_blank">/{{ r.short_url }}</a>
+                <a href="/admin/edit_redirect/{{ r.id }}" class="button">Edit Redirect</a>
             </li>
         {% endfor %}
     </ul>
-    <a href="/admin/edit_redirect" class="button">New Redirect</a>
+    <a href="/admin/add_redirect" class="button button-primary">New Redirect</a>
 </div>
 {% endblock %}

@@ -1,0 +1,41 @@
+{% extends "shared/_layout.html" %}
+{% block title %}PA·DA·WA·N Edit Publication{% endblock %}
+
+{% block main_content %}
+    <div class="section section-heading">
+
+        <h2>{{ "Edit" if publication_id else "Add"}} Publication</h2>
+
+        <div class="section generic-form">
+            <form action="" method="POST">
+                <input class="u-full-width" type="text"
+                       id= "title" name="title"
+                       title="Title of the Publication"
+                       placeholder="Title of the Publication"
+                       value="{{ title }}" required>
+                <textarea class="u-full-width" cols="50" rows="15"
+                       id= "contents" name="contents"
+                       title="Contents (HTML) of the publication"
+                       placeholder="Contents (HTML) of this publication">
+                        {{ content }}
+                </textarea>
+                <input class="u-full-width" type="text"
+                       id= "short_url" name="short_url"
+                       title="Short URL"
+                       placeholder="Short URL for the Publication (Optional)"
+                       value="{{ short_url }}">
+                <input type="checkbox" id="is_snippet" name="is_snippet"
+                    {% if is_snippet %}checked{% endif %}>
+                <label for="is_snippet">Snippet content</label>
+                <button type="submit" class="button button-primary">
+                    {{ "Edit" if publication_id else "Add"}}
+                </button>
+
+                {% if error %}
+                    <div class="error-msg">{{ error }}</div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

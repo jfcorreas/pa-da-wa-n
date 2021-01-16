@@ -27,4 +27,4 @@ class PublicationViewModel(ViewModelBase):
 
         self.publication_id = publication_id
         self.publication = cms_service.find_publication_by_id(self.publication_id)
-        self.html = "<h1>TODO</h1>"
+        self.html = self.publication.content

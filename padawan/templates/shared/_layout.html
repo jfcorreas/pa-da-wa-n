@@ -33,7 +33,10 @@
                 <ul>
                 {% if user_id %}
                     <li><a href="/account" class="button">Account</a></li>
-                    <li><a href="/admin/redirects" class="button">Redirects</a></li>
+                    {% if user.is_admin %}
+                        <li><a href="/admin/redirects" class="button">Redirects</a></li>
+                        <li><a href="/admin/publications" class="button">Publications</a></li>
+                    {% endif %}
                 {% else %}
                     <li><a href="/account/login" class="button">Login</a></li>
                 {% endif %}
