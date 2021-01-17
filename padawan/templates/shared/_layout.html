@@ -32,11 +32,10 @@
               <nav>
                 <ul>
                 {% if user_id %}
-                    <li><a href="/account" class="button">Account</a></li>
                     {% if user.is_admin %}
-                        <li><a href="/admin/redirects" class="button">Redirects</a></li>
-                        <li><a href="/admin/publications" class="button">Publications</a></li>
+                        <li><a href="/admin" class="button">Admin</a></li>
                     {% endif %}
+                    <li><a href="/account" class="button">Account</a></li>
                 {% else %}
                     <li><a href="/account/login" class="button">Login</a></li>
                 {% endif %}

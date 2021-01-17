@@ -8,9 +8,18 @@ from padawan.viewmodels.admin.editredirect_viewmodel import EditRedirectViewMode
 from padawan.viewmodels.admin.publicationtlist_viewmodel import PublicationListViewModel
 from padawan.viewmodels.admin.editpublication_viewmodel import EditPublicationViewModel
 from padawan.viewmodels.admin.redirectlist_viewmodel import RedirectListViewModel
+from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
 
 blueprint = Blueprint('admin', __name__, template_folder='templates')
 log = logbook.Logger('cms_admin')
+
+
+@blueprint.route('/admin')
+@response(template_file='admin/index.html')
+@permissions.admin
+def admin():
+    vm = ViewModelBase()
+    return vm.to_dict()
 
 
 @blueprint.route('/admin/redirects')
