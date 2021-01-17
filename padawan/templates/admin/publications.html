@@ -22,21 +22,21 @@
         {% for p in publications %}
             <tr>
                 <td>
-                    <a href="/publications/{{ p.id }}" target="_self">{{ p.id }}</a>
+                    <a href="/publications/{{ p.id }}" class="normal_link target="_self">{{ p.id }}</a>
                 </td>
                 <td>
-                    <a href="/publications/{{ p.id }}" target="_self">{{ p.title[:50] }}</a>
+                    <a href="/publications/{{ p.id }}" class="normal_link" target="_self">{{ p.title[:50] }}</a>
                 </td>
                 <td>
                     {% if p.short_url %}
-                        <a href="/{{ p.short_url }}" target="_self">/{{ p.short_url }}</a>
+                        <a href="/{{ p.short_url }}" class="normal_link" target="_self">/{{ p.short_url }}</a>
                     {% endif %}
                 </td>
                 <td>{{ p.created_date | date_type('full') }}</td>
                 <td>{{ p.updated_date | date_type('delta') }}</td>
                 <td>
                     <a href="/admin/edit_publication/{{ p.id }}"
-                       class="flaticon-font-selection-editor"></a>
+                       class="normal_link flaticon-font-selection-editor"></a>
                 </td>
             </tr>
         {% endfor %}

@@ -1,3 +1,4 @@
+import datetime
 from typing import Optional, List
 
 from padawan.data import db_session
@@ -139,6 +140,7 @@ def update_publication(publication_id: int, title: str, short_url: str, content:
         publication.content = content
         publication.is_snippet = is_snippet
         publication.updating_user = user_email
+        publication.updated_date = datetime.datetime.now()
         session.commit()
         return publication
     finally:

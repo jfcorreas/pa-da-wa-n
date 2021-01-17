@@ -41,11 +41,13 @@ class EditPublicationViewModel(ViewModelBase):
             return False
 
         if self.publication_id and not self.publication:
-            self.error = f"The redirect with ID {self.publication_id} doesn't exists"
+            self.error = f"The publication with ID {self.publication_id} doesn't exists"
             return False
 
-        if self.short_url and cms_service.get_publication_by_url(self.short_url):
-            self.error = f"The short url: /{self.short_url} already assigned to a publication"
-            return False
+        if self.short_url:
+            other_publication = cms_service.get_publication_by_url(self.short_url)
+            if other_publication and (other_publication.id != self.publication_id):
+                self.error = f"The short url: /{self.short_url} already assigned to another publication"
+                return False
 
         return True

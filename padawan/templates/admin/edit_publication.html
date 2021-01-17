@@ -6,7 +6,7 @@
 
         <h2>{{ "Edit" if publication_id else "Add"}} Publication</h2>
 
-        <label class="section generic-form">
+        <div class="section generic-form">
             <form action="" method="POST">
                 <label for="title">Title</label>
                 <input class="u-full-width" type="text"
@@ -18,22 +18,26 @@
                 <textarea class="u-full-width" cols="50" rows="15"
                        id= "contents" name="contents"
                        title="Contents (HTML) of the publication"
-                       placeholder="Contents (HTML) of this publication">
-                        {{ content }}
-                </textarea>
-                <label for="short_url">Short URL (Optional)</label>
-                <input class="u-full-width" type="text"
-                       id= "short_url" name="short_url"
-                       title="Short URL"
-                       placeholder="Short URL for the Publication (Optional)"
-                       value="{{ short_url }}">
-                <label>
-                    <input type="checkbox" id="is_snippet" name="is_snippet"
-                           {% if is_snippet %}checked{% endif %}>
-                    <span>This publication is a Snippet</span>
-                </label>
+                       placeholder="Contents (HTML) of this publication">{{ content }}</textarea>
+                <div class="row">
+                    <div class="six columns">
+                        <label>
+                            <input type="checkbox" id="is_snippet" name="is_snippet"
+                                   {% if is_snippet %}checked{% endif %}>
+                            <span>This publication is a Snippet</span>
+                        </label>
+                    </div>
+                    <div class="six columns">
+                        <label for="short_url">Short URL (Optional)</label>
+                        <input class="u-full-width" type="text"
+                               id= "short_url" name="short_url"
+                               title="Short URL"
+                               placeholder="Short URL for the Publication (Optional)"
+                               value="{{ short_url }}">
+                    </div>
+                </div>
                 <button type="submit" class="button button-primary">
-                    {{ "Edit" if publication_id else "Add"}}
+                    {{ "Save" if publication_id else "Create"}}
                 </button>
 
                 {% if error %}
