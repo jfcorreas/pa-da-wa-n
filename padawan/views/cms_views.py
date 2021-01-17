@@ -17,11 +17,12 @@ def publication_request(publication_id):
 
 
 @blueprint.route('/<path:cms_url>')
-@response(template_file='cms/page.html')
+@response(template_file='cms/publication.html')
 def cms_request(cms_url):
     vm = CmsRequestViewModel(cms_url)
 
     if vm.page:
+        vm = PublicationViewModel(vm.page.id)
         return vm.to_dict()
 
     if vm.redirect:

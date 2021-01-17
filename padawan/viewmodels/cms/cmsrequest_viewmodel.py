@@ -9,7 +9,7 @@ class CmsRequestViewModel(ViewModelBase):
         super().__init__()
 
         self.cms_url = cms_url
-        self.page = None
+        self.page = cms_service.get_publication_by_url(self.cms_url)
         self.redirect = cms_service.get_redirect(self.cms_url)
         self.redirect_url = None
         if self.redirect:
