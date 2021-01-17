@@ -21,13 +21,22 @@
   border-color: #67766a;
 }
 .all-but-footer {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 83px);
   background: bisque;
 }
 .main-content {
 
 }
-
+.container a {
+  color: darkred;
+  text-decoration: none;
+}
+.container a:hover {
+  color: indianred;
+}
+label {
+  text-align: left;
+}
 table {
   display: block;
   overflow-x: auto;
@@ -178,7 +187,7 @@ footer {
     font-size: 2.2rem;
   }
   .all-but-footer {
-    min-height: calc(100vh - 98px);
+    min-height: calc(100vh - 122px);
   }
 }
 
@@ -197,6 +206,9 @@ footer {
     max-width: 60%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .section.generic-form {
+    max-width: 550px;
   }
   .phone {
     top: -14rem;
@@ -222,6 +234,9 @@ footer {
   }
   .hero-heading {
     font-size: 3.0rem;
+  }
+  .section.generic-form {
+    max-width: 800px;
   }
   .phone {
     top: -16rem;

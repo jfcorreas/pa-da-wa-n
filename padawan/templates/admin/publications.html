@@ -1,5 +1,9 @@
 {% extends "shared/_layout.html" %}
 
+{% block additional_css %}
+    <link rel="stylesheet" type="text/css" href="/static/icons/flaticon.css">
+{% endblock %}
+
 {% block main_content %}
 
 <div class="section section-heading">
@@ -30,7 +34,10 @@
                 </td>
                 <td>{{ p.created_date | date_type('full') }}</td>
                 <td>{{ p.updated_date | date_type('delta') }}</td>
-                <td><a href="/admin/edit_publication/{{ p.id }}" class="button">Edit</a></td>
+                <td>
+                    <a href="/admin/edit_publication/{{ p.id }}"
+                       class="flaticon-font-selection-editor"></a>
+                </td>
             </tr>
         {% endfor %}
     </table>
