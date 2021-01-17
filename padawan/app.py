@@ -1,9 +1,12 @@
 import os
 import sys
+import datetime
 
 from flask import Flask
-
 import logbook
+
+from babel.dates import format_datetime
+from babel.dates import format_timedelta
 
 from padawan.data import db_session
 from padawan.infraestructure.log_levels import LogLevel
@@ -61,6 +64,21 @@ def run_app():
     port = 5050
     log.notice(f"Starting PA·DA·WA·N app in localhost:{port} (Debug: {debug})")
     app.run(debug=debug, port=port)
+
+
+@app.template_filter()
+def date_type(value, dateformat='medium'):
+    if dateformat == 'delta':
+        now = datetime.datetime.now()
+        # target = datetime.datetime.strptime(value, "%y-%m-%d")
+        target = value
+        delta = abs(now-target)
+        return format_timedelta(delta, locale='en_US')
+    if dateformat == 'full':
+        dateformat = "EEEE, d. MMMM y 'at' HH:mm"
+    elif dateformat == 'medium':
+        dateformat = "EE dd.MM.y HH:mm"
+    return format_datetime(value, dateformat, locale='en_US')
 
 
 if __name__ == '__main__':

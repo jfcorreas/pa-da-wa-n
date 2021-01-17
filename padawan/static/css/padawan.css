@@ -28,6 +28,11 @@
 
 }
 
+table {
+  display: block;
+  overflow-x: auto;
+}
+
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .section {
