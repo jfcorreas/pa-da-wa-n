@@ -39,6 +39,21 @@
   font-size: small;
   padding: 10px;
 }
+.content-block h1 {
+  font-size: 1.9rem;
+}
+.content-block h2 {
+  font-size: 1.6rem;
+}
+.content-block h3 {
+  font-size: 1.4rem;
+}
+.content-block h4 {
+  font-size: 1.2rem;
+}
+.content-block h5 {
+  font-size: 1.0rem;
+}
 .aditional_info {
   font-style: italic;
   font-size: smaller;
@@ -205,6 +220,21 @@ footer {
   }
   .all-but-footer {
     min-height: calc(100vh - 122px);
+  }
+  .content-block h1 {
+    font-size: 2.1rem;
+  }
+  .content-block h2 {
+    font-size: 1.8rem;
+  }
+  .content-block h3 {
+    font-size: 1.6rem;
+  }
+  .content-block h4 {
+    font-size: 1.4rem;
+  }
+  .content-block h5 {
+    font-size: 1.2rem;
   }
 }
 

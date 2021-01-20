@@ -10,20 +10,20 @@
     <article>
         <h4>
             {%  if p.short_url %}
-                <a href="/publications/{{ p.id }}" class="normal_link" target="_self">{{ p.title[:50] }}</a>
-            {% else %}
                 <a href="/{{ p.short_url }}" class="normal_link" target="_self">{{ p.title[:50] }}</a>
+            {% else %}
+                <a href="/publications/{{ p.id }}" class="normal_link" target="_self">{{ p.title[:50] }}</a>
             {% endif %}
         </h4>
         <span class="aditional_info">Last update: {{ p.updated_date | date_type('delta') }}</span>
         <div class="content-block">
-            {{ p.content[:300] | safe }}
-            {% if p.content|length > 300 %}
-            ...
+            {{ p.content[:500] | safe }}
+            <br>
+            {% if p.content|length > 500 %}
                 {%  if p.short_url %}
-                    <a href="/publications/{{ p.id }}" class="normal_link" target="_self">See more...</a>
+                    <a href="/{{ p.short_url }}" class="normal_link" target="_self"> [Read more...]</a>
                 {% else %}
-                    <a href="/{{ p.short_url }}" class="normal_link" target="_self">See more...</a>
+                    <a href="/publications/{{ p.id }}" class="normal_link" target="_self"> [Read more...]</a>
                 {% endif %}
             {% endif %}
         </div>
