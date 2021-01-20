@@ -1,9 +1,17 @@
 from flask import Blueprint, redirect, abort
 
-from cms.cmsrequest_viewmodel import CmsRequestViewModel, PublicationViewModel
-from view_modifiers import response
+from padawan.viewmodels.admin.publicationtlist_viewmodel import PublicationListViewModel
+from padawan.viewmodels.cms.cmsrequest_viewmodel import CmsRequestViewModel, PublicationViewModel
+from padawan.infraestructure.view_modifiers import response
 
 blueprint = Blueprint('cms', __name__, template_folder='templates')
+
+
+@blueprint.route('/publications')
+@response(template_file='cms/publications_preview.html')
+def publications_request():
+    vm = PublicationListViewModel()
+    return vm.to_dict()
 
 
 @blueprint.route('/publications/<int:publication_id>')
