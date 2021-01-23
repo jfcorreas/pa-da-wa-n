@@ -5,18 +5,29 @@
     <div class="section section-heading">
         <h2>Register new Padawan</h2>
     </div>
-    <div class="section generic-form">
+    <div class="section small-form">
         <form action="" method="POST">
             <input name="name" type="text" placeholder=" Your name" class="u-full-width" value="{{ name }}"
                    required>
             <input name="email" type="email" placeholder=" Your email address" class="u-full-width"
                    value="{{ email }}" required>
-            <input name="password" type="password" placeholder=" Password" class="u-full-width"
-                   value="{{ password }}" required>
-            <input name="password_bis" type="password" placeholder=" Retype Password" class="u-full-width"
-                   value="{{ password_bis }}" required>
-            <input name="age" type="number" min="18" max="120" class="u-full-width" placeholder=" Your age in years"
-                    required>
+            <div class="row">
+                <div class="six columns">
+                    <input name="password" type="password" placeholder=" Password" class="u-full-width"
+                           value="{{ password }}" required>
+                </div>
+                <div class="six columns">
+                    <input name="password_bis" type="password" placeholder=" Retype Password" class="u-full-width"
+                           value="{{ password_bis }}" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                    <label for="age">Your age in years</label>
+                    <input name="age" type="number" min="18" max="120" class="u-pull-left" placeholder="??"
+                           required>
+                </div>
+            </div>
             <button type="submit" class="button button-primary">Register</button>
             <div style="clear: both;"></div>
 
