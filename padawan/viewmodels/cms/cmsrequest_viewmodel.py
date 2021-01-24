@@ -1,7 +1,29 @@
 from flask import request
 
+import markdown
 import cms_service
 from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
+
+
+def convert_to_html(md_text) -> str:
+    config = {
+        'extra': {
+            'footnotes': {
+                'UNIQUE_IDS': True
+            },
+            'fenced-code': {
+                'lang-prefix': 'lang-'
+            }
+        },
+        'toc': {
+            'permalink': True
+        }
+    }
+    extensions = [
+        'codehilite',
+        'extra'
+    ]
+    return markdown.markdown(md_text, extensions=extensions, extension_configs=config)
 
 
 class CmsRequestViewModel(ViewModelBase):
@@ -27,4 +49,5 @@ class PublicationViewModel(ViewModelBase):
 
         self.publication_id = publication_id
         self.publication = cms_service.find_publication_by_id(self.publication_id)
-        self.html = self.publication.content
+        self.html = convert_to_html(self.publication.content)
+

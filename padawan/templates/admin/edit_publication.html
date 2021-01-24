@@ -1,6 +1,10 @@
 {% extends "shared/_layout.html" %}
 {% block title %}PA·DA·WA·N Edit Publication{% endblock %}
 
+{% block additional_css %}
+    <link rel="stylesheet" href="/static/node_modules/simplemde/dist/simplemde.min.css">
+{% endblock %}
+
 {% block main_content %}
     <div class="section section-heading">
 
@@ -15,10 +19,12 @@
                        placeholder="Title of the Publication"
                        value="{{ title }}" required>
                 <label for="contents">Content</label>
-                <textarea class="u-full-width" cols="50" rows="15"
-                       id= "contents" name="contents"
-                       title="Contents (HTML) of the publication"
-                       placeholder="Contents (HTML) of this publication">{{ content }}</textarea>
+                <div class="content-block">
+                    <textarea class="u-full-width" cols="50" rows="15"
+                              id= "contents" name="contents"
+                              title="Contents (HTML) of the publication"
+                              placeholder="Contents (HTML) of this publication">{{ content }}</textarea>
+                </div>
                 <div class="row">
                     <div class="six columns">
                         <label>
@@ -46,5 +52,17 @@
             </form>
         </div>
     </div>
+{% endblock %}
+
+
+{% block additional_js %}
+    <script src="/static/node_modules/simplemde/dist/simplemde.min.js"></script>
+    <!--suppress JSUnresolvedFunction -->
+    <script>
+        let editor = new SimpleMDE({
+            element: document.getElementById("contents"),
+            spellChecker: false
+        });
+    </script>
 {% endblock %}
 

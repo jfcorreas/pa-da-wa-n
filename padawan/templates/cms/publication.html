@@ -1,16 +1,30 @@
 {% extends "shared/_layout.html" %}
 {% block title %}{{ publication.title }}{% endblock %}
 
+{% block additional_css %}
+    <link rel="stylesheet" href="/static/css/codehilite.css">
+{% endblock %}
+
 {% block main_content %}
 
 <div class="section section-heading">
     <h2>{{ publication.title }}</h2>
-    <span>Created: {{ publication.created_date }} by {{ publication.creating_user }}</span>
-    <span>Updated: {{ publication.updated_date }} by {{ publication.updating_user }}</span>
+    <div class="row">
+        <div class="eight columns left">
+            <span class="aditional_info">
+                Created: {{ publication.created_date | date_type('full') }} by {{ publication.creating_user }}
+            </span>
+        </div>
+        <div class="four columns right">
+            <span class="aditional_info">
+                Last update: {{ publication.updated_date | date_type('delta') }}
+            </span>
+        </div>
+    </div>
     {% if publication.num_reads > 1 %}
         <span>{{ publication.num_reads }} reads</span>
     {% endif %}
-    <div>
+    <div class="content-block">
         {{ html | safe }}
     </div>
     {% if user and user.is_admin %}

@@ -75,9 +75,11 @@ def date_type(value, dateformat='medium'):
         delta = abs(now-target)
         return format_timedelta(delta, locale='en_US')
     if dateformat == 'full':
-        dateformat = "EEEE, d. MMMM y 'at' HH:mm"
+        dateformat = "EEEE, d MMMM y 'at' HH:mm"
     elif dateformat == 'medium':
-        dateformat = "EE dd.MM.y HH:mm"
+        dateformat = "dd/MM/y (HH:mm)"
+    elif dateformat == 'small':
+        dateformat = "dd/MM/y"
     return format_datetime(value, dateformat, locale='en_US')
 
 

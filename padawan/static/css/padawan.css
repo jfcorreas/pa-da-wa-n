@@ -38,6 +38,8 @@
   font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
   font-size: small;
   padding: 10px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 .content-block h1 {
   font-size: 1.9rem;
@@ -57,6 +59,12 @@
 .aditional_info {
   font-style: italic;
   font-size: smaller;
+}
+.left{
+  text-align: left;
+}
+.right{
+  text-align: right;
 }
 label {
   text-align: left;
