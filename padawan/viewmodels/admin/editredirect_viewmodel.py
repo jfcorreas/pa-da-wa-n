@@ -1,4 +1,4 @@
-import cms_service
+from padawan.services import cms_service
 from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
 
 
