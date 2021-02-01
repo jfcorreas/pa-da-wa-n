@@ -16,14 +16,16 @@
                    value="{{ query_str }}" required>
 
             <button type="submit" class="button button-primary">
-                <span class="flaticon-magnifying-glass"> Search</span>
+                Search
             </button>
 
             {% if error %}
                 <div class="error-msg">{{ error }}</div>
             {% endif %}
-            {% if num_results %}
-                <div class="aditional_info">Found {{ num_results }} results</div>
+            {% if num_results and search_seconds %}
+                <div class="aditional_info">
+                    Found {{ num_results }} results in {{ search_seconds }} secs.
+                </div>
             {% endif %}
         </form>
     </div>
