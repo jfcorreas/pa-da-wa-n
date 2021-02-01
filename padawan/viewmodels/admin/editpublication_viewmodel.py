@@ -9,6 +9,7 @@ class EditPublicationViewModel(ViewModelBase):
         self.title = ''
         self.short_url = ''
         self.content = ''
+        self.preview = ''
         self.is_snippet = False
         self.publication = None
         self.publication_id = publication_id
@@ -19,6 +20,7 @@ class EditPublicationViewModel(ViewModelBase):
         if self.publication:
             self.title = self.publication.title
             self.content = self.publication.content
+            self.preview = self.publication.preview
             self.short_url = self.publication.short_url
             self.is_snippet = self.publication.is_snippet
 

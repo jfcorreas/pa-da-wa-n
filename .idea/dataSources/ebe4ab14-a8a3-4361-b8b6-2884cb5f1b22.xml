@@ -1363,142 +1363,146 @@
       <Position>10</Position>
       <DataType>BOOLEAN|0s</DataType>
     </column>
-    <index id="497" parent="169" name="ix_publications_short_url">
+    <column id="497" parent="169" name="preview">
+      <Position>11</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <index id="498" parent="169" name="ix_publications_short_url">
       <ColNames>short_url</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <index id="498" parent="169" name="ix_publications_created_date">
+    <index id="499" parent="169" name="ix_publications_created_date">
       <ColNames>created_date</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <index id="499" parent="169" name="ix_publications_updated_date">
+    <index id="500" parent="169" name="ix_publications_updated_date">
       <ColNames>updated_date</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <index id="500" parent="169" name="ix_publications_num_reads">
+    <index id="501" parent="169" name="ix_publications_num_reads">
       <ColNames>num_reads</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <key id="501" parent="169">
+    <key id="502" parent="169">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <check id="502" parent="169">
+    <check id="503" parent="169">
       <Predicate>is_snippet IN (0, 1)</Predicate>
     </check>
-    <column id="503" parent="170" name="id">
+    <column id="504" parent="170" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="504" parent="170" name="created_date">
+    <column id="505" parent="170" name="created_date">
       <Position>2</Position>
       <DataType>DATETIME|0s</DataType>
     </column>
-    <column id="505" parent="170" name="creating_user">
+    <column id="506" parent="170" name="creating_user">
       <Position>3</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="506" parent="170" name="short_url">
+    <column id="507" parent="170" name="short_url">
       <Position>4</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="507" parent="170" name="name">
+    <column id="508" parent="170" name="name">
       <Position>5</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="508" parent="170" name="url">
+    <column id="509" parent="170" name="url">
       <Position>6</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="509" parent="170" name="ix_redirects_short_url">
+    <index id="510" parent="170" name="ix_redirects_short_url">
       <ColNames>short_url</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <index id="510" parent="170" name="ix_redirects_created_date">
+    <index id="511" parent="170" name="ix_redirects_created_date">
       <ColNames>created_date</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <key id="511" parent="170">
+    <key id="512" parent="170">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="512" parent="171" name="type">
+    <column id="513" parent="171" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="513" parent="171" name="name">
+    <column id="514" parent="171" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="514" parent="171" name="tbl_name">
+    <column id="515" parent="171" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="515" parent="171" name="rootpage">
+    <column id="516" parent="171" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="516" parent="171" name="sql">
+    <column id="517" parent="171" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="517" parent="172" name="id">
+    <column id="518" parent="172" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="518" parent="172" name="created_date">
+    <column id="519" parent="172" name="created_date">
       <Position>2</Position>
       <DataType>DATETIME|0s</DataType>
     </column>
-    <column id="519" parent="172" name="name">
+    <column id="520" parent="172" name="name">
       <Position>3</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="520" parent="172" name="email">
+    <column id="521" parent="172" name="email">
       <Position>4</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="521" parent="172" name="hashed_password">
+    <column id="522" parent="172" name="hashed_password">
       <Position>5</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="522" parent="172" name="last_login">
+    <column id="523" parent="172" name="last_login">
       <Position>6</Position>
       <DataType>DATETIME|0s</DataType>
     </column>
-    <column id="523" parent="172" name="is_admin">
+    <column id="524" parent="172" name="is_admin">
       <Position>7</Position>
       <DataType>BOOLEAN|0s</DataType>
     </column>
-    <index id="524" parent="172" name="ix_users_email">
+    <index id="525" parent="172" name="ix_users_email">
       <ColNames>email</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <index id="525" parent="172" name="ix_users_created_date">
+    <index id="526" parent="172" name="ix_users_created_date">
       <ColNames>created_date</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <index id="526" parent="172" name="ix_users_last_login">
+    <index id="527" parent="172" name="ix_users_last_login">
       <ColNames>last_login</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
-    <key id="527" parent="172">
+    <key id="528" parent="172">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <check id="528" parent="172">
+    <check id="529" parent="172">
       <Predicate>is_admin IN (0, 1)</Predicate>
     </check>
   </database-model>

@@ -51,3 +51,4 @@ class PublicationViewModel(ViewModelBase):
         self.publication = cms_service.find_publication_by_id(self.publication_id)
         self.html = convert_to_html(self.publication.content)
 
+

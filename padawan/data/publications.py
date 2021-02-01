@@ -20,4 +20,5 @@ class Publication(SqlAlchemyBase):
     title: str = sqlalchemy.Column(sqlalchemy.String, nullable=False)
     short_url: str = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)
     content: str = sqlalchemy.Column(sqlalchemy.String)
+    preview: str = sqlalchemy.Column(sqlalchemy.String)
     is_snippet: bool = sqlalchemy.Column(sqlalchemy.Boolean, default=False)

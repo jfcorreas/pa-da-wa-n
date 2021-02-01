@@ -1,9 +1,31 @@
 import datetime
+import markdown
 from typing import Optional, List
 
 from padawan.data import db_session
 from padawan.data.redirects import Redirect
 from padawan.data.publications import Publication
+
+
+def convert_to_html(md_text) -> str:
+    config = {
+        'extra': {
+            'footnotes': {
+                'UNIQUE_IDS': True
+            },
+            'fenced-code': {
+                'lang-prefix': 'lang-'
+            }
+        },
+        'toc': {
+            'permalink': True
+        }
+    }
+    extensions = [
+        'codehilite',
+        'extra'
+    ]
+    return markdown.markdown(md_text, extensions=extensions, extension_configs=config)
 
 
 def get_redirect_count() -> int:
@@ -112,7 +134,8 @@ def create_publication(title: str, short_url: str, content: str, is_snippet: boo
 
     publication = Publication()
     publication.title = title.strip()
-    publication.url = content.strip()
+    publication.content = content.strip()
+    publication.preview = convert_to_html(publication.content[0:800])
     publication.short_url = short_url.strip().lower()
     publication.is_snippet = is_snippet
     publication.creating_user = user_email
@@ -135,9 +158,10 @@ def update_publication(publication_id: int, title: str, short_url: str, content:
         publication = session.query(Publication).filter(Publication.id == publication_id).first()
         if not publication:
             raise Exception(f"Cannot update publication: {title}, it does not exists!")
-        publication.title = title
-        publication.short_url = short_url
-        publication.content = content
+        publication.title = title.strip()
+        publication.short_url = short_url.strip().lower()
+        publication.content = content.strip()
+        publication.preview = convert_to_html(publication.content[0:800])
         publication.is_snippet = is_snippet
         publication.updating_user = user_email
         publication.updated_date = datetime.datetime.now()

@@ -17,7 +17,7 @@ class ResultsViewModel(ViewModelBase):
             start_time = time.time()
             self.results = search_service.search_publications(query_str)
             if self.results:
-                self.search_seconds = time.time() - start_time
+                self.search_seconds = round(time.time() - start_time, 3)
                 self.num_results = len(self.results)
             else:
                 self.error = "No results found"

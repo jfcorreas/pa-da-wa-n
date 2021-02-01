@@ -138,7 +138,8 @@ def edit_publication_post(publication_id: int):
         log.notice(f"User cannot edit publication: {vm.user.email}. Error: {vm.error}")
         return vm.to_dict()
 
-    cms_service.update_publication(vm.publication_id, vm.title, vm.short_url, vm.content, vm.is_snippet, vm.user.email)
+    cms_service.update_publication(vm.publication_id, vm.title, vm.short_url, vm.content,
+                                   vm.is_snippet, vm.user.email)
     log.notice(f"User editing publication: {vm.user.email}. Publication: {vm.title}")
 
     return redirect('/admin/publications')
