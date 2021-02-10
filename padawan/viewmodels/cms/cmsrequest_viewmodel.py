@@ -1,7 +1,7 @@
 from flask import request
 
 import markdown
-import cms_service
+from padawan.services import cms_service
 from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
 
 

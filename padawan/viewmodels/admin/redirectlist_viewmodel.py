@@ -1,5 +1,5 @@
 from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
-import cms_service
+from padawan.services import cms_service
 
 
 class RedirectListViewModel(ViewModelBase):
