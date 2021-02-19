@@ -17,7 +17,7 @@
         </h4>
         <span class="aditional_info">Last update: {{ p.updated_date | date_type('delta') }}</span>
         <div class="content-block">
-            {{ p.preview[:800] | safe }}
+            <div>{{ p.preview | safe }}</div>
             <br>
             {% if p.preview|length > 800 %}
                 {%  if p.short_url %}
