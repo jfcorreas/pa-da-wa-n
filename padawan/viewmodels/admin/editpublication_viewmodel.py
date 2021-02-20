@@ -22,6 +22,8 @@ class EditPublicationViewModel(ViewModelBase):
             self.content = self.publication.content
             self.preview = self.publication.preview
             self.short_url = self.publication.short_url
+            if not self.short_url:
+                self.short_url = ''
             self.is_snippet = self.publication.is_snippet
 
         self.error = None
@@ -51,5 +53,9 @@ class EditPublicationViewModel(ViewModelBase):
             if other_publication and (other_publication.id != self.publication_id):
                 self.error = f"The short url: /{self.short_url} already assigned to another publication"
                 return False
+
+        if self.is_snippet and not self.short_url:
+            self.error = "Short URL is mandatory for snippets"
+            return False
 
         return True

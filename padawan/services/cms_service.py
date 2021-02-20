@@ -136,7 +136,9 @@ def create_publication(title: str, short_url: str, content: str, is_snippet: boo
     publication.title = title.strip()
     publication.content = content.strip()
     publication.preview = convert_to_html(publication.content[0:800])
-    publication.short_url = short_url.strip().lower()
+    publication.short_url = None
+    if short_url:
+        publication.short_url = short_url.strip().lower()
     publication.is_snippet = is_snippet
     publication.creating_user = user_email
     publication.updating_user = user_email
@@ -159,7 +161,9 @@ def update_publication(publication_id: int, title: str, short_url: str, content:
         if not publication:
             raise Exception(f"Cannot update publication: {title}, it does not exists!")
         publication.title = title.strip()
-        publication.short_url = short_url.strip().lower()
+        publication.short_url = None
+        if short_url:
+            publication.short_url = short_url.strip().lower()
         publication.content = content.strip()
         publication.preview = convert_to_html(publication.content[0:800])
         publication.is_snippet = is_snippet

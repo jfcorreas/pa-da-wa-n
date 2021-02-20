@@ -10,6 +10,10 @@
 
         <h2>{{ "Edit" if publication_id else "Add"}} Publication</h2>
 
+        {% if error %}
+            <div class="error-msg">{{ error }}</div>
+        {% endif %}
+
         <div class="section generic-form">
             <form action="" method="POST">
                 <label for="title">Title</label>
@@ -34,11 +38,11 @@
                         </label>
                     </div>
                     <div class="six columns">
-                        <label for="short_url">Short URL (Optional)</label>
+                        <label for="short_url">Short URL (Optional for publications)</label>
                         <input class="u-full-width" type="text"
                                id= "short_url" name="short_url"
                                title="Short URL"
-                               placeholder="Short URL for the Publication (Optional)"
+                               placeholder="The Short URL"
                                value="{{ short_url }}">
                     </div>
                 </div>
@@ -46,9 +50,6 @@
                     {{ "Save" if publication_id else "Create"}}
                 </button>
 
-                {% if error %}
-                    <div class="error-msg">{{ error }}</div>
-                {% endif %}
             </form>
         </div>
     </div>
