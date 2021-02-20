@@ -51,7 +51,7 @@ class EditPublicationViewModel(ViewModelBase):
             return False
 
         if self.short_url:
-            if not re.match(r'[A-Za-z_0-9]*', self.short_url):
+            if not re.fullmatch(r'[A-Za-z_0-9]*', self.short_url):
                 self.error = f"The short url: /{self.short_url} has invalid characters"
                 return False
             other_publication = cms_service.get_publication_by_url(self.short_url)
