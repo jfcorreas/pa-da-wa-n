@@ -24,7 +24,7 @@
                        placeholder="Destination URL for the Redirect"
                        value="{{ url }}" required>
                 <button type="submit" class="button button-primary">
-                    {{ "Edit" if redirect_id else "Add"}}
+                    {{ "Save" if redirect_id else "Add"}}
                 </button>
 
                 {% if error %}

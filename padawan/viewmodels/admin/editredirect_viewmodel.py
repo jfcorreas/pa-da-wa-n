@@ -1,3 +1,5 @@
+import re
+
 from padawan.services import cms_service
 from padawan.viewmodels.shared.viewmodelbase import ViewModelBase
 
@@ -39,6 +41,10 @@ class EditRedirectViewModel(ViewModelBase):
 
         if not self.short_url or not self.short_url.strip():
             self.error = 'You must specify a sort URL'
+            return False
+
+        if not re.fullmatch(r'[A-Za-z_0-9]*', self.short_url):
+            self.error = f"The short url: /{self.short_url} has invalid characters"
             return False
 
         if self.redirect_id and not self.redirect:
