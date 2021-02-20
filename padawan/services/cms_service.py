@@ -173,3 +173,17 @@ def update_publication(publication_id: int, title: str, short_url: str, content:
         return publication
     finally:
         session.close()
+
+
+def get_snippet_content(snippet_url: str) -> Optional[str]:
+    session = db_session.create_session()
+
+    try:
+        snippet: Publication = session.query(Publication).\
+                    filter(Publication.is_snippet == True).\
+                    filter(Publication.short_url == snippet_url).first()
+    finally:
+        session.close()
+    if snippet:
+        return snippet.content
+    return None

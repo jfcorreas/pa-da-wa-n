@@ -1,3 +1,5 @@
+import re
+
 from flask import request
 
 import markdown
@@ -43,12 +45,24 @@ class CmsRequestViewModel(ViewModelBase):
             self.redirect_url = dest
 
 
+def replace_snippets(content: str) -> str:
+    snippets = re.findall(r'\[SNIPPET ([A-Za-z_0-9]*)\]', content)
+    for snippet_url in snippets:
+        snippet_content = cms_service.get_snippet_content(snippet_url)
+        if snippet_content:
+            content = re.sub(r'\[SNIPPET [A-Za-z_0-9]*\]', snippet_content, content)
+        else:
+            content = re.sub(r'\[SNIPPET [A-Za-z_0-9]*\]', f'SNIPPET \'{snippet_url}\' does not exists', content)
+    return content
+
+
 class PublicationViewModel(ViewModelBase):
     def __init__(self, publication_id):
         super().__init__()
 
         self.publication_id = publication_id
         self.publication = cms_service.find_publication_by_id(self.publication_id)
+        self.publication.content = replace_snippets(self.publication.content)
         self.html = convert_to_html(self.publication.content)
 
 
