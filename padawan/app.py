@@ -11,9 +11,11 @@ from babel.dates import format_timedelta
 from padawan.data import db_session
 from padawan.infraestructure.log_levels import LogLevel
 
-# todo implement subjects, categories and codex
-# todo add filters in publication list by subjects, categories, codex, etc.
-# todo insert images in publications
+# TODO implement subjects, categories and codex
+# TODO add filters in publication list by subjects, categories, codex, etc.
+# TODO insert images in publications
+# TODO add sorting in publication list
+
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)
 

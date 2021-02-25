@@ -3,6 +3,7 @@
 
 {% block additional_css %}
     <link rel="stylesheet" href="/static/node_modules/simplemde/dist/simplemde.min.css">
+    <link rel="stylesheet" href="/static/highlight/github.min.css">
 {% endblock %}
 
 {% block main_content %}
@@ -49,7 +50,9 @@
                 <button type="submit" class="button button-primary">
                     {{ "Save" if publication_id else "Create"}}
                 </button>
-
+                <a onclick="editor.clearAutosavedValue()" href="/admin/publications" class="button">
+                    Cancel
+                </a>
             </form>
         </div>
     </div>
@@ -58,10 +61,24 @@
 
 {% block additional_js %}
     <script src="/static/node_modules/simplemde/dist/simplemde.min.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
     <!--suppress JSUnresolvedFunction -->
     <script>
         let editor = new SimpleMDE({
             element: document.getElementById("contents"),
+            autosave: {
+                enabled: true,
+            {% if publication_id %}
+                uniqueId: 'publication_' + {{ publication_id }} + '-user_' + {{ user_id }},
+            {% else %}
+                uniqueId: 'publication_new-user_' + {{ user_id }},
+            {% endif %}
+                delay: 10000
+            },
+            renderingConfig: {
+		    	codeSyntaxHighlighting: true,
+	        },
+            showIcons: ["code", "table","horizontal-rule"],
             spellChecker: false
         });
     </script>
